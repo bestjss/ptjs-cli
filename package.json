@@ -21,6 +21,14 @@
 	},
 	"license": "ISC",
 	"bin": {
-		"ptjs-cli": "bin/ptjs-cli.js"
+		"pt": "bin/ptjs-cli.js"
+	},
+	"dependencies": {
+		"chalk": "^2.4.2",
+		"commander": "^2.19.0",
+		"figlet": "^1.2.1"
+	},
+	"devDependencies": {
+		"eslint": "^5.13.0"
 	}
 }
