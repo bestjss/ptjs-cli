@@ -1,0 +1,26 @@
+{
+	"name": "ptjs-cli",
+	"version": "1.0.0",
+	"description": "A tool for quickly creating projects based on templates",
+	"main": "lib/index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://gitlab.bestjss.com/tools-cli/ptjs-cli.git"
+	},
+	"keywords": [
+		"Project",
+		"Cli"
+	],
+	"author": {
+		"name": "JS",
+		"email": "jsduan@bestjss.com",
+		"url": "https://www.bestjss.com"
+	},
+	"license": "ISC",
+	"bin": {
+		"ptjs-cli": "bin/ptjs-cli.js"
+	}
+}
