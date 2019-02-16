@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const inquirer = require('inquirer');
-
+const file = require('../../lib').file;
 const question = async () => {
   return await base();
 };
@@ -11,7 +11,15 @@ const base = async () => {
       type: 'input',
       message: 'Set a template name:',
       name: 'label',
-      default: 'project_template' // 默认值
+      default: 'project_template',
+      validate: (val) => {
+        const res = file.checkLabel(val);
+        if (res) {
+          console.log(res);
+          return 'The template name has been exists';
+        }
+        return true;
+      }
     }
   ]);
 };

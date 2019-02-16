@@ -1,0 +1,8 @@
+random: impeccable
+label: project_template
+source-type: python
+package-type: pip
+remote-type: gitlab
+gitlab-remote: 'https://gitlab.bestjss.com/tools-cli/ptjs-cli.git'
+gitlab-account: jsduan
+gitlab-password: e3a6e683703be7f7414d6f4d302a9a96

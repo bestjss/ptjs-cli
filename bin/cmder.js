@@ -22,7 +22,7 @@ module.exports = new class {
       .description('add a new source info')
       .action((Command) => {
         cmdValue = Command._name;
-        question.add.new_project_config();
+        question.add();
       });
     // List Labels
     program
@@ -30,7 +30,6 @@ module.exports = new class {
       .description('show label list')
       .action((Command) => {
         cmdValue = Command._name;
-       
       });
     // Pull a New Project From Label
     program

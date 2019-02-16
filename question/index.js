@@ -1,6 +1,32 @@
 #!/usr/bin/env node
+const merge = require('deepmerge');
+const { yaml, file } = require('../lib');
+const superb = require('superb');
+const add_config = require('./.add');
+// const new_config = require('./.new');
+// const list_config = require('./.list');
+
 module.exports = {
-  new: require('./new'),
-  add: require('./add'),
-  list: require('./list')
+  // new cmd questions
+  new: async () => {
+    return '';
+  },
+  // add cmd questions
+  add: async () => {
+    const random = { random: superb.random() };
+    const base = await add_config.base.question();
+    const language = await add_config.language.question();
+    const remote = await add_config.remote.question();
+    const answers = merge.all([
+      random,
+      base,
+      language,
+      remote
+    ]);
+    // When finish ask , write config file
+    await yaml.writYaml(answers);
+    return answers;
+  },
+  // list cmd questions
+  list: async () => {}
 };

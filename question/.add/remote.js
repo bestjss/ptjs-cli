@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 const inquirer = require('inquirer');
 const merge = require('deepmerge');
-
 const question = async () => {
   let answers = await remote();
   switch (answers['remote-type']) {
