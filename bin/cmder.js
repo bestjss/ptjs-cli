@@ -2,7 +2,7 @@
 
 const program = require('commander');
 const package_config = require('../package.json');
-const { logo } = require('./logo');
+const { logo } = require('../lib');
 const question = require('../question');
 
 /**
@@ -44,7 +44,7 @@ module.exports = new class {
     program.parse(process.argv);
     // no Correct cmd
     if (typeof cmdValue === 'undefined') {
-      logo();
+      logo.show();
     }
   }
 }();

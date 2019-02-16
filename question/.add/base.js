@@ -15,7 +15,6 @@ const base = async () => {
       validate: (val) => {
         const res = file.checkLabel(val);
         if (res) {
-          console.log(res);
           return 'The template name has been exists';
         }
         return true;
