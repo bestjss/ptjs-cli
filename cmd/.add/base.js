@@ -17,6 +17,9 @@ const base = async () => {
         if (res) {
           return 'The template name has been exists';
         }
+        if (val.indexOf('.') > -1) {
+          return 'Do not include special symbols, such as [ . / ]';
+        }
         return true;
       }
     }
