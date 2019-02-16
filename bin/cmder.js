@@ -3,7 +3,7 @@
 const program = require('commander');
 const package_config = require('../package.json');
 const { logo } = require('../lib');
-const question = require('../question');
+const question = require('../cmd');
 
 /**
  * Commander input
