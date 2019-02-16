@@ -19,7 +19,7 @@ module.exports = new class {
     // Add a new project Path to labels
     program
       .command('add')
-      .description('add a new source info')
+      .description('add a new tepmlate info')
       .action((Command) => {
         cmdValue = Command._name;
         question.add();
@@ -27,7 +27,7 @@ module.exports = new class {
     // List Labels
     program
       .command('list')
-      .description('show label list')
+      .description('show tepmlate-name list')
       .action((Command) => {
         cmdValue = Command._name;
         question.list();
@@ -35,11 +35,12 @@ module.exports = new class {
     // Pull a New Project From Label
     program
       .command('new')
-      .description('create a template from label')
-      .option('-i, --init', 'Remove recursively')
-      .action((Command) => {
+      .description('create a project from template-name')
+      .arguments('<name>')
+      .option('-i, --init', 'init project ; such as run [ npm -i / pip install -r requirements.txt ] ')
+      .action((name, Command) => {
         cmdValue = Command._name;
-        console.log(Command);
+        console.log(name, cmdValue, Command.init);
       });
 
     program.parse(process.argv);
