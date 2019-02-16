@@ -30,6 +30,7 @@ module.exports = new class {
       .description('show label list')
       .action((Command) => {
         cmdValue = Command._name;
+        question.list();
       });
     // Pull a New Project From Label
     program

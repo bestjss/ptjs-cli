@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 const merge = require('deepmerge');
-const { yaml, logo } = require('../lib');
+const { yaml, logo, tools } = require('../lib');
 const superb = require('superb');
 const add_config = require('./.add');
+const list_config = require('./.list');
 const chalk = require('chalk');
 const log = console.log;
 // const new_config = require('./.new');
-// const list_config = require('./.list');
 
 module.exports = {
   // new cmd questions
@@ -28,8 +28,9 @@ module.exports = {
     // When finish ask , write config file
     await yaml.writYaml(answers);
     logo.show();
-    log(chalk.green('================='));
-    log(chalk.blue('Project Template Add Finished !'));
+    log(chalk.yellow.underline.bold('Project Templat Add Result :'));
+    log();
+    log(chalk.green('Project Template Add Finished !'));
     log(
       chalk.blue(
         `You can Use Command : ' pt new ${answers[
@@ -37,9 +38,32 @@ module.exports = {
         ]} ' to create project template !`
       )
     );
-    log(chalk.green('================='));
     return answers;
   },
   // list cmd questions
-  list: async () => {}
+  list: async () => {
+    const list = list_config.labes();
+    logo.show();
+    log(
+      chalk.yellow.underline.bold('Project Templat List :')
+    );
+    log();
+    if (list.length > 0) {
+      log(tools.tableLabes(list));
+    } else {
+      /*eslint-disable quotes*/
+      log(
+        chalk.red(
+          'No project template available'
+        )
+      );
+      log(
+        chalk.blue(
+          "You can Use Command : ' pt add ' to create project template !"
+        )
+      );
+      /*eslint-enable quotes*/
+    }
+    return list;
+  }
 };

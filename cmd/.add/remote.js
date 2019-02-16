@@ -38,8 +38,9 @@ const gitlab = async () => {
       default:
         'https://gitlab.bestjss.com/tools-cli/ptjs-cli.git',
       validate: (val) => {
-        /*eslint no-useless-escape: "off"*/
+        /*eslint-disable no-useless-escape*/
         const reg = /(http|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#].git)/;
+        /*eslint-enable no-useless-escape*/
         if (!reg.test(val)) {
           return 'The remote address format is incorrect';
         }
