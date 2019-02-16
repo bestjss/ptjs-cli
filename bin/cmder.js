@@ -3,6 +3,8 @@
 const program = require('commander');
 const package_config = require('../package.json');
 const { logo } = require('./logo');
+const question = require('../question');
+
 /**
  * Commander input
  */
@@ -18,16 +20,9 @@ module.exports = new class {
     program
       .command('add')
       .description('add a new source info')
-      .option('-l, --label [value]', 'project label')
-      .option('-t, --type [value]', 'gitlib/github')
-      .option('-a, --account [value]', 'account')
-      .option('-p, --password [value]', 'password')
       .action((Command) => {
         cmdValue = Command._name;
-        console.log('label:', Command.label);
-        console.log('type:', Command.type);
-        console.log('account:', Command.account);
-        console.log('password:', Command.password);
+        question.add.new_project_config();
       });
     // List Labels
     program
@@ -35,6 +30,7 @@ module.exports = new class {
       .description('show label list')
       .action((Command) => {
         cmdValue = Command._name;
+       
       });
     // Pull a New Project From Label
     program

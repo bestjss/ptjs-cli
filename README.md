@@ -12,12 +12,11 @@
 - [download-git-repo](https://www.npmjs.com/package/download-git-repo)
 - [deepmerge](https://www.npmjs.com/package/deepmerge)
 - [update-notifier](https://www.npmjs.com/package/update-notifier)
-- [yeoman/yo](https://github.com/yeoman/yo)
 - [lint-staged](https://www.npmjs.com/package/lint-staged)
 - [lodash](https://www.npmjs.com/package/lodash)
 - [mkdirp](https://www.npmjs.com/package/mkdirp)
 - [superb 生成随机名](https://www.npmjs.com/package/superb)
-- [yeoman-generator](https://www.npmjs.com/package/yeoman-generator)
+- [inquirer](https://www.npmjs.com/package/inquirer)
 - 
 ```sh
 #

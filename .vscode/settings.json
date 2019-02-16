@@ -3,5 +3,5 @@
     "eslint.options": { "configFile": ".eslintrc.json" },
     "prettier.useTabs": false,
     "prettier.tabWidth": 2,
-    "prettier.printWidth": 60
+    "prettier.printWidth": 60,
 }
