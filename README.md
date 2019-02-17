@@ -2,6 +2,7 @@
 
 ## Description
 - Project Template By js [Author]
+- [GitHub](https://github.com/jsDuan/ptjs-cli)
 - Currently the first version of the beta, there may be many problems
 - Generic creation project Cli based on Git 
 - Quickly create new projects based on template engineering
@@ -15,7 +16,9 @@
 - Customization based on specific language item types
 - Others
 
-![](/images/)
+![](/images/add.png)
+![](/images/list.png)
+![](/images/new.png)
 
 ## How to install
 ```sh
