@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { yaml, gitlab, file } = require('../lib');
+const { yaml, gitlab, github, file } = require('../lib');
 const chalk = require('chalk');
 const log = console.log;
 const new_config = require('./.new');
@@ -37,7 +37,7 @@ module.exports = async (init = false) => {
     );
   }
   if (templateInfo['remote-type'] === 'github') {
-    out = await gitlab.clone(
+    out = await github.clone(
       templateInfo['remote'],
       templateInfo['branch']
     );
