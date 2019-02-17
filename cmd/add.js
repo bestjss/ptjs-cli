@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 const merge = require('deepmerge');
-const { yaml } = require('../lib');
-const superb = require('superb');
+const { yaml,tools } = require('../lib');
 const add_config = require('./.add');
 const chalk = require('chalk');
 const log = console.log;
@@ -11,7 +10,7 @@ module.exports = async () => {
       'The Git must be installed berfor:'
     )
   );
-  const random = { random: superb.random() };
+  const random = { random: tools.random(16) };
   const base = await add_config.base.question();
   const language = await add_config.language.question();
   const remote = await add_config.remote.question();
