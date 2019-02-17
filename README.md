@@ -16,9 +16,6 @@
 - Customization based on specific language item types
 - Others
 
-![](/images/add.png)
-![](/images/list.png)
-![](/images/new.png)
 
 ## How to install
 ```sh
