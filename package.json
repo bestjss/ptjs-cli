@@ -35,6 +35,7 @@
 		"inquirer": "^6.2.2",
 		"mkdirp": "^0.5.1",
 		"read-yaml": "^1.1.0",
+		"simple-git": "^1.107.0",
 		"split-string": "^6.0.0",
 		"superb": "^3.0.0",
 		"table": "^5.2.3",

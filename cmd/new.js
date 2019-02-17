@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { yaml, gitlab, github, file } = require('../lib');
+const { yaml, Gitlab, Github, file } = require('../lib');
 const chalk = require('chalk');
 const log = console.log;
 const new_config = require('./.new');
@@ -25,27 +25,48 @@ module.exports = async (init = false) => {
   // Clone git
   let out;
   if (templateInfo['remote-type'] === 'gitlab') {
-    out = await gitlab.clone(
+    const gitlab = new Gitlab(
       templateInfo['remote'],
+      templateInfo['gitlab-account'],
+      templateInfo['gitlab-password'],
       templateInfo['branch']
     );
+    out = await gitlab.clone();
   }
   if (templateInfo['remote-type'] === 'github') {
-    out = await github.clone(
+    const github = new Github(
       templateInfo['remote'],
       templateInfo['branch']
     );
+    out = await github.clone();
   }
 
+  // Use a new git remote
   if (selectData.newGit === 'yes') {
     const remoteInfo = await new_config.remote.question();
+    const gitlab = new Gitlab(
+      remoteInfo['remote'],
+      remoteInfo['gitlab-account'],
+      remoteInfo['gitlab-password']
+    );
     // set new git remote
-    const old_project = gitlab.gitLabName(
+    const old_project = file.labelName(
       templateInfo['remote']
     );
     // Rename Project
     file.renameFile(old_project, remoteInfo['label']);
+    // Remove old git
+    gitlab.remove(
+      `${process.cwd()}/${remoteInfo['label']}/.git`
+    );
     // Wirte new git Config
+    await gitlab.init(
+      `${process.cwd()}/${remoteInfo['label']}`
+    );
+
+    // Add and commit && push
+    
+
   }
 
   log(chalk.blue(out));
