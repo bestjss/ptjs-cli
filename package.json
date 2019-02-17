@@ -22,7 +22,7 @@
 		"email": "jsduan@bestjss.com",
 		"url": "https://www.bestjss.com"
 	},
-	"license": "ISC",
+	"license": "Apache-2.0",
 	"bin": {
 		"pt": "bin/ptjs-cli.js"
 	},
