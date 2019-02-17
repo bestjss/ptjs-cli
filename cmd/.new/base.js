@@ -1,12 +1,11 @@
 #!/usr/bin/env node
 const inquirer = require('inquirer');
 const { file, tools } = require('../../lib');
-const question = async () => {
-  return await base();
+const question = async (list) => {
+  return await base(list);
 };
 
-const base = async () => {
-  const list = file.yamlList();
+const base = async (list) => {
   return inquirer.prompt([
     {
       type: 'list',

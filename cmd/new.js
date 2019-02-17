@@ -6,7 +6,19 @@ const log = console.log;
 const new_config = require('./.new');
 
 module.exports = async (init = false) => {
-  const selectData = await new_config.base.question();
+  const list = file.yamlList();
+  if (!list.length) {
+    /*eslint-disable quotes*/
+    log(chalk.red('No project template available'));
+    log(
+      chalk.blue(
+        "You can Use Command : ' pt add ' to create project template !"
+      )
+    );
+    /*eslint-enable quotes*/
+    return;
+  }
+  const selectData = await new_config.base.question(list);
   const label = selectData.label;
   log(
     chalk.yellow.underline.bold(
@@ -65,8 +77,6 @@ module.exports = async (init = false) => {
     );
 
     // Add and commit && push
-    
-
   }
 
   log(chalk.blue(out));

@@ -3,7 +3,7 @@
 const program = require('commander');
 const package_config = require('../package.json');
 const { logo } = require('../lib');
-const { add, list, create } = require('../cmd');
+const { add, list, create ,del } = require('../cmd');
 const chalk = require('chalk');
 /**
  * Commander input
@@ -66,7 +66,22 @@ module.exports = new class {
           });
         // console.log(name, cmdValue, Command.init);
       });
-
+    // Delete Project Template
+    program
+      .command('delete')
+      .description('delete a project template')
+      .action((Command) => {
+        cmdValue = Command._name;
+        del()
+          .then(() => {
+            console.log(chalk.green('Finished!'));
+            logo.show();
+          })
+          .catch((err) => {
+            console.log(chalk.red('something error:', err));
+          });
+        // console.log(name, cmdValue, Command.init);
+      });
     program.parse(process.argv);
     // no Correct cmd
     if (typeof cmdValue === 'undefined') {
