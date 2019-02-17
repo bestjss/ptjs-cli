@@ -25,7 +25,8 @@
 ## Version
 - 1.0.1  First Version
 - 1.0.2  Fix "crypto.createCipher is deprecated"
-
+- 1.0.3  Fix "Readme"
+- 
 ## How to install
 ```sh
 # npm install
