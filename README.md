@@ -9,6 +9,12 @@
 - Automatically configure git information
 - The template is currently available from gitlab, github
 
+## Support 
+- nodejs version > 9
+- develop on nodejs 9.11.2
+- test on nodejs 9.11.2 / v11.10.0
+
+
 ## Done
 - Fast copying of project templates has been implemented
 
@@ -16,6 +22,9 @@
 - Customization based on specific language item types
 - Others
 
+## Version
+- 1.0.1  First Version
+- 1.0.2  Fix "crypto.createCipher is deprecated"
 
 ## How to install
 ```sh
