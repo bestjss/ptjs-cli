@@ -22,7 +22,7 @@ module.exports = async (init = false) => {
   const label = selectData.label;
   log(
     chalk.yellow.underline.bold(
-      `Begin to create new template : ${label}`
+      `Begin to create new Project from template : ${label}`
     )
   );
   // Check Template ex

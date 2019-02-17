@@ -2,6 +2,7 @@
 
 ## Description
 - Project Template By js [Author]
+- Currently the first version of the beta, there may be many problems
 - Generic creation project Cli based on Git 
 - Quickly create new projects based on template engineering
 - Automatically configure git information
