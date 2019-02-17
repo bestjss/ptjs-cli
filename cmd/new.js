@@ -7,12 +7,6 @@ const new_config = require('./.new');
 
 module.exports = async (init = false) => {
   const selectData = await new_config.base.question();
-  if (selectData.newGit === 'yes') {
-    const remote = await new_config.remote.question();
-    console.log(remote);
-    // set new git remote
-  }
-
   const label = selectData.label;
   log(
     chalk.yellow.underline.bold(
@@ -42,6 +36,18 @@ module.exports = async (init = false) => {
       templateInfo['branch']
     );
   }
+
+  if (selectData.newGit === 'yes') {
+    const remoteInfo = await new_config.remote.question();
+    // set new git remote
+    const old_project = gitlab.gitLabName(
+      templateInfo['remote']
+    );
+    // Rename Project
+    file.renameFile(old_project, remoteInfo['label']);
+    // Wirte new git Config
+  }
+
   log(chalk.blue(out));
   if (init) {
     // init project
