@@ -7,7 +7,7 @@ const log = console.log;
 module.exports = async () => {
   log(
     chalk.yellow.underline.bold(
-      'The Git must be installed berfor:'
+      'The Git must be installed befor:'
     )
   );
   const random = { random: tools.random(16) };
