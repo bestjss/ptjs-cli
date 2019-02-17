@@ -6,7 +6,14 @@ const log = console.log;
 const new_config = require('./.new');
 
 module.exports = async (init = false) => {
-  const label = await new_config.base.question();
+  const selectData = await new_config.base.question();
+  if (selectData.newGit === 'yes') {
+    const remote = await new_config.remote.question();
+    console.log(remote);
+    // set new git remote
+  }
+
+  const label = selectData.label;
   log(
     chalk.yellow.underline.bold(
       `Begin to create new template : ${label}`

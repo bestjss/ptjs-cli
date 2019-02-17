@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const inquirer = require('inquirer');
 const merge = require('deepmerge');
+const config = require('../../config');
 const question = async () => {
   let answers = await remote();
   switch (answers['remote-type']) {
@@ -38,9 +39,7 @@ const gitlab = async () => {
       default:
         'https://github.com/jsDuan/ptjs-template.git',
       validate: (val) => {
-        /*eslint-disable no-useless-escape*/
-        const reg = /(http|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#].git)/;
-        /*eslint-enable no-useless-escape*/
+        const reg = config.REMOTE_REG;
         if (!reg.test(val)) {
           return 'The remote address format is incorrect';
         }
@@ -53,7 +52,7 @@ const gitlab = async () => {
       name: 'branch',
       default: 'master',
       validate: (val) => {
-        if(!val){
+        if (!val) {
           return 'The branch cannot be empty';
         }
         return true;
