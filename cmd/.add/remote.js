@@ -34,15 +34,27 @@ const gitlab = async () => {
     {
       type: 'input',
       message: 'Set gitlab template remote:',
-      name: 'gitlab-remote',
+      name: 'remote',
       default:
-        'https://gitlab.bestjss.com/tools-cli/ptjs-cli.git',
+        'https://github.com/jsDuan/ptjs-template.git',
       validate: (val) => {
         /*eslint-disable no-useless-escape*/
         const reg = /(http|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#].git)/;
         /*eslint-enable no-useless-escape*/
         if (!reg.test(val)) {
           return 'The remote address format is incorrect';
+        }
+        return true;
+      }
+    },
+    {
+      type: 'input',
+      message: 'Set gitlab template branch:',
+      name: 'branch',
+      default: 'master',
+      validate: (val) => {
+        if(!val){
+          return 'The branch cannot be empty';
         }
         return true;
       }
@@ -62,6 +74,7 @@ const gitlab = async () => {
       type: 'input',
       message: 'Set a gitlab password:',
       name: 'gitlab-password',
+      type: 'password',
       validate: (val) => {
         if (!val) {
           return 'The gitlab password cannot be empty';

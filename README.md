@@ -18,6 +18,7 @@
 - [superb 生成随机名](https://www.npmjs.com/package/superb)
 - [inquirer](https://www.npmjs.com/package/inquirer)
 - [yaml](https://www.npmjs.com/package/yaml)
+- [simple-git](https://www.npmjs.com/package/simple-git)
 ```sh
 #
 $ npm install -g

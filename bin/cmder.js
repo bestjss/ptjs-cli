@@ -3,7 +3,7 @@
 const program = require('commander');
 const package_config = require('../package.json');
 const { logo } = require('../lib');
-const question = require('../cmd');
+const { add, list, create } = require('../cmd');
 const chalk = require('chalk');
 /**
  * Commander input
@@ -22,8 +22,7 @@ module.exports = new class {
       .description('add a new tepmlate info')
       .action((Command) => {
         cmdValue = Command._name;
-        question
-          .add()
+        add()
           .then(() => {
             console.log(chalk.green('Finished!'));
             logo.show();
@@ -38,8 +37,7 @@ module.exports = new class {
       .description('show tepmlate-name list')
       .action((Command) => {
         cmdValue = Command._name;
-        question
-          .list()
+        list()
           .then(() => {
             console.log(chalk.green('Finished!'));
             logo.show();
@@ -52,15 +50,13 @@ module.exports = new class {
     program
       .command('new')
       .description('create a project from template-name')
-      .arguments('<name>')
       .option(
         '-i, --init',
         'init project ; such as run [ npm -i / pip install -r requirements.txt ] '
       )
-      .action((name, Command) => {
+      .action((Command) => {
         cmdValue = Command._name;
-        question
-          .new(name, Command.init)
+        create(Command.init)
           .then(() => {
             console.log(chalk.green('Finished!'));
             logo.show();
