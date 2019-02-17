@@ -11,8 +11,8 @@
 
 ## Support 
 - nodejs version > 9
-- develop on nodejs 9.11.2
-- test on nodejs 9.11.2 / v11.10.0
+- develop on nodejs v9.11.2
+- test on nodejs v9.11.2 / v11.10.0
 
 
 ## Done
@@ -27,6 +27,8 @@
 - 1.0.2  Fix "crypto.createCipher is deprecated"
 - 1.0.3  Fix "Readme"
 - 1.0.4  Fix "package info"
+- 1.0.5  Add github support , github project ==> local gitlib project
+- 1.0.6  Fix Description
 ## How to install
 ```sh
 # npm install

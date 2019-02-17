@@ -9,6 +9,7 @@ const question = async () => {
       answers = merge(answers, await gitlab());
       break;
     case 'github':
+      answers = merge(answers, await github());
       break;
     default:
       break;
@@ -77,6 +78,37 @@ const gitlab = async () => {
       validate: (val) => {
         if (!val) {
           return 'The gitlab password cannot be empty';
+        }
+        return true;
+      }
+    }
+  ]);
+};
+
+const github = async () => {
+  return inquirer.prompt([
+    {
+      type: 'input',
+      message: 'Set github template remote:',
+      name: 'remote',
+      default:
+        'https://github.com/jsDuan/ptjs-template.git',
+      validate: (val) => {
+        const reg = config.REMOTE_REG;
+        if (!reg.test(val)) {
+          return 'The remote address format is incorrect';
+        }
+        return true;
+      }
+    },
+    {
+      type: 'input',
+      message: 'Set github template branch:',
+      name: 'branch',
+      default: 'master',
+      validate: (val) => {
+        if (!val) {
+          return 'The branch cannot be empty';
         }
         return true;
       }
