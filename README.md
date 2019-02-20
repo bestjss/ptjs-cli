@@ -29,7 +29,7 @@
 - 1.0.4  Fix "package info"
 - 1.0.5  Add github support , github project ==> local gitlib project
 - 1.0.6  Fix Description
-- 1.1.0  Add Test && Rename to @ptjs/cli
+- 1.0.7  Add Test
 ## How to install
 ```sh
 # npm install
