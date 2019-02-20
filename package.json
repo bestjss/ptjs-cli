@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jsDuan/ptjs-cli.git"
+    "url": "https://github.com/bestjss/ptjs-cli.git"
   },
   "keywords": [
     "Project",
@@ -19,7 +19,7 @@
   ],
   "author": {
     "name": "JS",
-    "email": "jsduan0813@gmail.com",
+    "email": "jsduan@bestjss.com",
     "url": "https://www.bestjss.com"
   },
   "license": "Apache-2.0",
