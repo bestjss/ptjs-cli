@@ -4,8 +4,9 @@
   "description": "A tool for quickly creating projects based on templates",
   "main": "lib/index.js",
   "scripts": {
-    "test": "npm run lint",
-    "eslint": "eslint --format 'node_modules/eslint-friendly-formatter' bin/ cmd/ lib/"
+    "test": "npm run eslint && npm run mocha",
+    "eslint": "eslint cmd/. lib/. --config .eslintrc.json",
+    "mocha": "mocha test/ --recursive --exit"
   },
   "repository": {
     "type": "git",
@@ -29,7 +30,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run eslint",
+      "pre-commit": "npm run test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-push": ""
     }
@@ -52,7 +53,6 @@
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
     "eslint": "^5.13.0",
-    "eslint-friendly-formatter": "^4.0.1",
     "husky": "^1.3.1",
     "mocha": "^6.0.0"
   },
