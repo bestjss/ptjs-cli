@@ -29,10 +29,12 @@
 - 1.0.4  Fix "package info"
 - 1.0.5  Add github support , github project ==> local gitlib project
 - 1.0.6  Fix Description
+- 1.1.0  Add Test && Rename to @ptjs/cli
 ## How to install
 ```sh
 # npm install
-$ npm install -g ptjs-cli
+$ npm install -g ptjs-cli  <= 1.0.6
+$ npm install -g @ptjs/cli >= 1.1.0
 ```
 
 ## Commands
