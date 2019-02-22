@@ -24,6 +24,10 @@
     "email": "jsduan@bestjss.com",
     "url": "https://www.bestjss.com"
   },
+  "bugs":{
+    "url":"https://github.com/bestjss/ptjs-cli/issues",
+    "email":"jsduan@bestjss.com"
+  },
   "license": "Apache-2.0",
   "bin": {
     "pt": "bin/ptjs-cli.js"
