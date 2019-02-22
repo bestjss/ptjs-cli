@@ -31,6 +31,8 @@
 
 - 1.0.7 latest
 
+- [Changelog](./CHANGELOG)
+
 ## How to install
 
 ```sh
