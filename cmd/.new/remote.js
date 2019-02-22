@@ -9,21 +9,6 @@ const remote = async () => {
   return inquirer.prompt([
     {
       type: 'input',
-      message: 'Set a project name:',
-      name: 'label',
-      default: 'new_project',
-      validate: (val) => {
-        if (!val) {
-          return 'The project name cannot be empty';
-        }
-        if (val.indexOf('.') > -1) {
-          return 'Do not include special symbols, such as [ . / ]';
-        }
-        return true;
-      }
-    },
-    {
-      type: 'input',
       message: 'Set new gitlab project remote:',
       name: 'remote',
       default:

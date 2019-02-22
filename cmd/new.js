@@ -41,6 +41,7 @@ module.exports = async (init = false) => {
       templateInfo['remote'],
       templateInfo['gitlab-account'],
       templateInfo['gitlab-password'],
+      `${process.cwd()}/${selectData.pt_new_name}`,
       templateInfo['branch']
     );
     out = await gitlab.clone();
@@ -48,6 +49,7 @@ module.exports = async (init = false) => {
   if (templateInfo['remote-type'] === 'github') {
     const github = new Github(
       templateInfo['remote'],
+      `${process.cwd()}/${selectData.pt_new_name}`,
       templateInfo['branch']
     );
     out = await github.clone();
@@ -61,19 +63,13 @@ module.exports = async (init = false) => {
       remoteInfo['gitlab-account'],
       remoteInfo['gitlab-password']
     );
-    // set new git remote
-    const old_project = file.labelName(
-      templateInfo['remote']
-    );
-    // Rename Project
-    file.renameFile(old_project, remoteInfo['label']);
     // Remove old git
     gitlab.remove(
-      `${process.cwd()}/${remoteInfo['label']}/.git`
+      `${process.cwd()}/${selectData.pt_new_name}/.git`
     );
     // Wirte new git Config
     await gitlab.init(
-      `${process.cwd()}/${remoteInfo['label']}`
+      `${process.cwd()}/${selectData.pt_new_name}`
     );
 
     // Add and commit && push

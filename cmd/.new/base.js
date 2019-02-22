@@ -14,6 +14,21 @@ const base = async (list) => {
       choices: tools.yamlLabes(list)
     },
     {
+      type: 'input',
+      message: 'Set a project name:',
+      name: 'pt_new_name',
+      default: 'new_project',
+      validate: (val) => {
+        if (!val) {
+          return 'The project name cannot be empty';
+        }
+        if (val.indexOf('.') > -1) {
+          return 'Do not include special symbols, such as [ . / ]';
+        }
+        return true;
+      }
+    },
+    {
       type: 'list',
       message: 'Use new gitlib?:',
       name: 'newGit',
