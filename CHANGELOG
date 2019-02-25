@@ -5,3 +5,4 @@
 - 1.0.5  Add github support , github project ==> local gitlib project
 - 1.0.6  Fix Description
 - 1.0.7  Add Test && Fix project name already exists
+- 1.0.8  Add check package version on npm

@@ -12,7 +12,7 @@
 - Automatically configure git information
 - The template is currently available from gitlab, github
 
-## Support 
+## Support
 
 - nodejs version > 9
 - develop on nodejs v9.11.2
@@ -29,7 +29,7 @@
 
 ## Version
 
-- 1.0.7 latest
+- 1.0.8 latest
 
 - [Changelog](./CHANGELOG)
 

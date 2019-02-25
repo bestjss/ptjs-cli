@@ -1,6 +1,6 @@
 {
   "name": "ptjs-cli",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A tool for quickly creating projects based on templates",
   "main": "lib/index.js",
   "scripts": {
@@ -24,9 +24,9 @@
     "email": "jsduan@bestjss.com",
     "url": "https://www.bestjss.com"
   },
-  "bugs":{
-    "url":"https://github.com/bestjss/ptjs-cli/issues",
-    "email":"jsduan@bestjss.com"
+  "bugs": {
+    "url": "https://github.com/bestjss/ptjs-cli/issues",
+    "email": "jsduan@bestjss.com"
   },
   "license": "Apache-2.0",
   "bin": {
@@ -42,11 +42,13 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "commander": "^2.19.0",
+    "compare-versions": "^3.4.0",
     "crypto-random-string": "^1.0.0",
     "deepmerge": "^3.2.0",
     "figlet": "^1.2.1",
     "fs-extra": "^7.0.1",
     "inquirer": "^6.2.2",
+    "package-json": "^6.0.0",
     "read-yaml": "^1.1.0",
     "simple-git": "^1.107.0",
     "split-string": "^6.0.0",
