@@ -17,7 +17,9 @@
     "Template",
     "Gitlib",
     "Github",
-    "Cli"
+    "Cli",
+    "Clone",
+    "Copy"
   ],
   "author": {
     "name": "JS",
