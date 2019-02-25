@@ -29,7 +29,7 @@
 
 ## Version
 
-- 1.0.9 latest
+- 1.1.0 latest
 
 - [Changelog](./CHANGELOG)
 

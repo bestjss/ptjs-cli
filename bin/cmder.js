@@ -17,6 +17,9 @@ const chalk = require('chalk');
 module.exports = new class {
   cmd() {
     // Check Update
+    version_config.configDirCheck();
+    // Version
+    version_config.versionCheck();
     let cmdValue;
 
     program.version(
@@ -90,8 +93,6 @@ module.exports = new class {
         // console.log(name, cmdValue, Command.init);
       });
     program.parse(process.argv);
-    // Version
-    version_config.versionCheck();
     // no Correct cmd
     if (typeof cmdValue === 'undefined') {
       logo.show();

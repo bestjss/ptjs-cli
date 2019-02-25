@@ -3,6 +3,15 @@ const chalk = require('chalk');
 const { pack } = require('../lib');
 const compareVersions = require('compare-versions');
 const packageInfo = require('../package.json');
+const fse = require('fs-extra');
+const config = require('../config');
+
+/**
+ * Check File
+ */
+const configDirCheck = async () => {
+  return await fse.ensureDir(config.YAML_PATH);
+};
 
 /**
  * random check
@@ -37,5 +46,6 @@ const versionCheck = async () => {
 };
 
 module.exports = {
-  versionCheck
+  versionCheck,
+  configDirCheck
 };
