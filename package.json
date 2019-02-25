@@ -1,6 +1,6 @@
 {
   "name": "ptjs-cli",
-  "version": "1.0.8",
+  "version": "1.0.7",
   "description": "A tool for quickly creating projects based on templates",
   "main": "lib/index.js",
   "scripts": {

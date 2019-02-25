@@ -2,8 +2,14 @@
 
 const program = require('commander');
 const package_config = require('../package.json');
-const { logo, pack } = require('../lib');
-const { add, list, create, del } = require('../cmd');
+const { logo } = require('../lib');
+const {
+  add,
+  list,
+  create,
+  del,
+  version_config
+} = require('../cmd');
 const chalk = require('chalk');
 /**
  * Commander input
@@ -11,28 +17,8 @@ const chalk = require('chalk');
 module.exports = new class {
   cmd() {
     // Check Update
-    pack
-      .chackVersion()
-      .then((r) => {
-        if (!r) {
-          console.log();
-          console.log(
-            chalk.blue(
-              'ptjs-cli has released a new version'
-            )
-          );
-          console.log(
-            chalk.green('Please run'),
-            chalk.yellow('npm update ptjs-cli -g'),
-            chalk.green('to update')
-          );
-        }
-      })
-      .catch((err) => {
-        console.log(' Check version error: ', err);
-      });
     let cmdValue;
-    // Version
+
     program.version(
       package_config.version,
       '-v, --version'
@@ -104,7 +90,8 @@ module.exports = new class {
         // console.log(name, cmdValue, Command.init);
       });
     program.parse(process.argv);
-
+    // Version
+    version_config.versionCheck();
     // no Correct cmd
     if (typeof cmdValue === 'undefined') {
       logo.show();
